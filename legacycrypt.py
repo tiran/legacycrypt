@@ -5,6 +5,7 @@ import string as _string
 from random import SystemRandom as _SystemRandom
 from collections import namedtuple as _namedtuple
 
+__version__ = "0.2.3.7.0b1"
 
 _saltchars = _string.ascii_letters + _string.digits + './'
 _sr = _SystemRandom()

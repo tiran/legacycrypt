@@ -1,0 +1,20 @@
+[build-system]
+requires = ["flit"]
+build-backend = "flit.buildapi"
+
+[tool.flit.metadata]
+module = "legacycrypt"
+author = "Christian Heimes"
+author-email = "christian@python.org"
+maintainer = "Christian Heimes"
+maintainer-email = "christian@python.org"
+home-page = "https://github.com/tiran/legacycrypt"
+description-file = "README.md"
+classifiers = [
+    "Programming Language :: Python :: 3.6",
+    "Programming Language :: Python :: 3.7",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: Python Software Foundation License",
+    "Topic :: Security :: Cryptography"
+]
+requires-python = ">=3.6"
