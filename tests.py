@@ -1,8 +1,6 @@
 import sys
-from test import support
 import unittest
-
-crypt = support.import_module('crypt')
+import legacycrypt as crypt
 
 class CryptTestCase(unittest.TestCase):
 
