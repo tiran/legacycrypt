@@ -4,6 +4,14 @@ import legacycrypt as crypt
 
 class CryptTestCase(unittest.TestCase):
 
+    def test_types(self):
+        self.assertIs(crypt.crypt('', ''), None)
+        with self.assertRaises(TypeError):
+            crypt.crypt(b'', '')
+        with self.assertRaises(TypeError):
+            crypt.crypt('', b'')
+        self.assertIsInstance(crypt.crypt('mypassword'), str)
+
     def test_crypt(self):
         cr = crypt.crypt('mypassword')
         cr2 = crypt.crypt('mypassword', cr)
@@ -42,7 +50,7 @@ class CryptTestCase(unittest.TestCase):
                         'requires support of SHA-2')
     def test_sha2_rounds(self):
         for method in (crypt.METHOD_SHA256, crypt.METHOD_SHA512):
-            for rounds in 1000, 10_000, 100_000:
+            for rounds in 1000, 10000, 100000:
                 salt = crypt.mksalt(method, rounds=rounds)
                 self.assertIn('$rounds=%d$' % rounds, salt)
                 self.assertEqual(len(salt) - method.salt_chars,
